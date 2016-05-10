@@ -1,0 +1,7 @@
+task hello {
+	description "Hey student! run this one :D "
+	group "Our demo"
+	doLast {
+		print "Hello World!"
+	}
+}
