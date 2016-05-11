@@ -1,0 +1,7 @@
+task hello {
+	description "This is task description"
+	group "Udacity"
+	doLast {
+		println "Hello World!"
+	}
+}
