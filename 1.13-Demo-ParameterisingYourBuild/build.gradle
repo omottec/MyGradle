@@ -1,0 +1,7 @@
+task printGreeting << {
+	println greeting
+}
+
+ext {
+	greeting = "Hello from inside the build script"
+}
