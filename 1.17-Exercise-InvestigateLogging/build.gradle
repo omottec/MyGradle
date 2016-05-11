@@ -1,0 +1,21 @@
+class HelloTask extends DefaultTask {
+	@TaskAction
+	void doAction() {
+		logger.info 'Start HelloTask Action'
+		logger.lifecycle 'Hello World'
+		logger.info 'End HelloTask Action'
+	}
+}
+
+task hello(type: HelloTask)
+
+/*task derpy << {
+    primp "Herp de derp"
+}
+*/
+
+logger.debug "Catch me if you can"
+
+task hello2 << {
+	println "Hello World"
+}
