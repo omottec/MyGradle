@@ -1,0 +1,33 @@
+task stringsAndTypes << {
+	println "Nice work abbreviating the task name"
+
+	def foo = 4.2
+	println "the class of foo:${foo.class}, the value of foo:$foo"
+	println "the square root of 127 is ${Math.sqrt(127)}"
+
+	foo = new Date()
+	println "the class of foo:${foo.class}, the value of foo:$foo"
+
+	def hello = "Hello, Bond"
+	def name = hello.substring(7)
+	println name.toUpperCase()
+}
+
+task closures << {
+	def addTwo = {
+		x, y -> x + y
+	}
+
+	println addTwo(17, 25)
+}
+
+task lists << {
+	def candyList = ["Tomatoes", "Carrots", "Spinach", "Radishes", "Beef"]
+	def capitalCandies = candyList.collect{it.toUpperCase()}
+	capitalCandies.each{println it}
+}
+
+task foobar << {
+	def foo = "bar"
+	println "$foo + foo equals ${foo + 'foo'}"
+}
