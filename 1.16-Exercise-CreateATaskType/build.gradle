@@ -1,0 +1,8 @@
+class HelloTask extends DefaultTask {
+	@TaskAction
+	void daAction() {
+		println 'Executing my custom task'
+	}
+}
+
+task hello(type: HelloTask)
