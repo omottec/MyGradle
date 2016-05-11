@@ -1,0 +1,10 @@
+task copySources(type: Copy) {
+	from 'src'
+	into 'build/out'
+}
+
+task bundleSources(type: Zip, dependsOn: copySources) {
+	baseName = 'sources'
+	destinationDir = file('build')
+	from 'build/out'
+}
