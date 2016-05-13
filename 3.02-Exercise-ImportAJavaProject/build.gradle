@@ -1,0 +1,9 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.udacity.gradle.JokeTeller'
+
+task solutionExecute(type: JavaExec) {
+    main = 'com.udacity.gradle.JokeTeller'
+    classpath = sourceSets.main.runtimeClasspath
+}
