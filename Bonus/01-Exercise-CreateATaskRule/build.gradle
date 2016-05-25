@@ -1,0 +1,20 @@
+task bundledocs << {
+	println 'bundledocs action'
+	finalizedBy "docs"
+}
+
+task bundleweb << {
+	println 'bundleweb action'
+}
+
+tasks.addRule("Pattern: bundle<Source>: Creates a bundle of a particular source collection.") { String taskName ->
+	if (taskName.startsWith("bundle")) {
+		def sourceName = taskName.subString(6).toLowerCase()
+		task(sourceName, type:Zip) {
+			baseName = sourceName
+			destinationDir = file('build')
+			from "src/$sourceName"
+		}
+	}
+
+}
