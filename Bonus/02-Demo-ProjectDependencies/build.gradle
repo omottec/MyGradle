@@ -1,0 +1,32 @@
+allprojects {
+	apply plugin: 'base'
+}
+
+project(':projA') {
+	configurations {
+		docs
+	}
+
+	task zip(type: Zip) {
+		from 'foo.txt'
+	}
+
+	artifacts {
+		docs zip
+	}
+}
+
+project(':projB') {
+	configurations {
+		deps
+	}
+
+	dependencies {
+		deps project(path: ':projA', configuration: 'docs')
+	}
+
+	task copyDeps(type: Copy) {
+		from configurations.deps
+		into "$buildDir/deps"
+	}
+}
